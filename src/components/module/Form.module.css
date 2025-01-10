@@ -1,0 +1,32 @@
+
+.form, .field{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.form input[type="text"], .form select{
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4rem;
+    font-size: 1.8rem;
+    font-weight: 400rem;
+
+}
+
+.form label{
+    font-size: 1.8rem;
+    font-weight: 400rem;
+}
+
+.submit{
+    background-color: var(--primary);
+    border:none;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding:1rem;
+    border-radius: 4rem;
+}
