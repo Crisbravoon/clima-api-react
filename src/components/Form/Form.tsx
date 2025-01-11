@@ -4,9 +4,14 @@ import { ChangeEvent, FormEvent, useState } from "react"
 import { countries } from "../../data/countries"
 import sytle from '../module/Form.module.css'
 import { SearchType } from "../../types";
-import Alert from "../alert/Alert";
+import Alert from "../Alert/Alert";
 
-const Form = () => {
+
+type FormProps = {
+    fetchWeather: (search: SearchType) => Promise<void>
+};
+
+const Form = ({ fetchWeather }: FormProps) => {
 
     const [search, setSearch] = useState<SearchType>({
         city: '',
@@ -16,7 +21,6 @@ const Form = () => {
     const [alert, setAlert] = useState('');
 
     const handleChange = (e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>) => {
-
         e.preventDefault();
         setSearch({
             ...search,
@@ -25,13 +29,13 @@ const Form = () => {
     };
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-
         e.preventDefault();
-
         if (Object.values(search).includes('')) {
             setAlert('Todos los campos son obligatorios')
             return;
         }
+
+        fetchWeather(search);
     };
 
     return (
@@ -69,6 +73,6 @@ const Form = () => {
             <input className={sytle.submit} type="submit" value='Consultar Clima' />
         </form>
     )
-}
+};
 
 export default Form

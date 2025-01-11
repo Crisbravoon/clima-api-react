@@ -1,23 +1,25 @@
-
-
-.title{
+.title {
     text-align: center;
-    font-size: 3rem ;
+    font-size: 3rem;
     margin-top: 5rem;
 }
 
-.container{
+.container {
     width: 95%;
     max-width: 100rem;
-    margin: 0 auto;
+    margin: 0 ;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column; 
+    gap: 6rem; 
 }
 
-@media (min-width: 768px){
-    .container{
+@media (min-width: 768px) {
+    .container {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas */
         align-items: center;
-        gap: 4rem;
-        margin-top: 5rem;
+        gap: 8rem; /* Mayor espaciado entre los elementos */
+        
     }
 }
