@@ -42,7 +42,7 @@ export const useWeather = () => {
 
         try {
 
-            const geoURL = `http://api.openweathermap.org/geo/1.0/direct?q=${search.city},${search.country}&appid=${apiKey}`;
+            const geoURL = `https://api.openweathermap.org/geo/1.0/direct?q=${search.city},${search.country}&appid=${apiKey}`;
 
             const { data } = await axios.get(geoURL);
 
