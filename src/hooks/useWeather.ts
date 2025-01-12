@@ -31,6 +31,7 @@ export const useWeather = () => {
 
     const [weather, setWeather] = useState<Weather>(initialState);
 
+    const [notFound, setNotFound] = useState(false);
 
     const fetchWeather = async (search: SearchType) => {
 
@@ -45,6 +46,11 @@ export const useWeather = () => {
 
             const { data } = await axios.get(geoURL);
 
+            if (!data[0]) {
+                setNotFound(true);
+                return
+            };
+
             const { lat, lon } = data[0];
 
             const weatherApi = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`
@@ -57,7 +63,6 @@ export const useWeather = () => {
                 setWeather(result.data);
             }
 
-
         } catch (error) {
             console.log(error)
         } finally {
@@ -65,11 +70,12 @@ export const useWeather = () => {
         }
     };
 
-    const hasWeatherData = useMemo(() => weather.name, [weather])
+    const hasWeatherData = useMemo(() => weather.name, [weather]);
 
     return {
         weather,
         loading,
+        notFound,
         fetchWeather,
         hasWeatherData
     }

@@ -4,7 +4,6 @@ import styles from '../module/WeatherDetails.module.css';
 import { formatTemperature } from "../../helpers";
 import { Weather } from "../../hooks/useWeather";
 
-
 type WeatherProps = {
     weather: Weather,
 };
