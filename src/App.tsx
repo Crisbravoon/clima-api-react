@@ -1,10 +1,10 @@
 
-import style from './App.module.css'
-import Alert from './components/Alert/Alert.tsx'
-import Form from './components/Form/Form.tsx'
-import { Spinner } from './components/Spinner/Spinner'
-import WeatherDetails from './components/WeatherDetails/WeatherDetails'
-import { useWeather } from './hooks/useWeather'
+import style from '@/App.module.css'
+import Alert from '@/components/Alert/Alert.tsx'
+import Form from '@/components/Form/Form.tsx'
+import { Spinner } from '@/components/Spinner/Spinner'
+import WeatherDetails from '@/components/WeatherDetails/WeatherDetails'
+import { useWeather } from '@/hooks/useWeather'
 
 function App() {
 

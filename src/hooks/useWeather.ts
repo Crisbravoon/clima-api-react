@@ -1,8 +1,10 @@
 
 import axios from 'axios';
 import { z } from 'zod'
-import { SearchType } from '../types';
+
 import { useMemo, useState } from 'react';
+
+import { SearchType } from '@/types';
 
 //ZOD Esquema
 const WeatherSchema = z.object({
