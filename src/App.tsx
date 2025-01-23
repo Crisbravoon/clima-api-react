@@ -1,6 +1,6 @@
 
 import style from './App.module.css'
-import Alert from './components/Alert/Alert'
+import Alert from './components/Alert/Alert.tsx'
 import Form from './components/Form/Form'
 import { Spinner } from './components/Spinner/Spinner'
 import WeatherDetails from './components/WeatherDetails/WeatherDetails'
