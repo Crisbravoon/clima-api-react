@@ -4,7 +4,7 @@ import { ChangeEvent, FormEvent, useState } from "react"
 import { countries } from "../../data/countries"
 import sytle from '../module/Form.module.css'
 import { SearchType } from "../../types";
-import Alert from "../Alert/Alert";
+import Alert from "../Alert/Alert.tsx";
 
 
 type FormProps = {
